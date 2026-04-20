@@ -1,14 +1,33 @@
 /* 1. IMPORT DES POLICES */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* 2. VARIABLES DE COULEURS */
+/* --- Palette de couleurs --- */
 :root {
-    --bg-lavande: #E2E1FC;
-    --accent-cuivre: #CB894F;
-    --accent-violet: #A76EEE;
-    --text-sombre: #3A2D52;
+  --bg-page: #E2E1FC;      /* Lavande très clair (Fond) */
+  --card-bg: #D6BEFA;      /* Glycine (Cartes au repos) */
+  --text-main: #3A2D52;    /* Violet-Noir (Texte ultra lisible) */
+  --accent-primary: #A76EEE; /* Violet vibrant (Titres et hover) */
+  --accent-copper: #CB894F;  /* Cuivre (Détails et nom) */
+  --white-soft: rgba(255, 255, 255, 0.4);
 }
 
+/* --- Base --- */
+body {
+  margin: 0%;
+  padding: 0%;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: "Raleway", sans-serif; /* Utilisation de ta police choisie */
+  line-height: 1.6;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  transition: 0.3s;
+}
+
+/* --- Header --- */
 .header_main {
   height: 80px;
   width: 100%;
