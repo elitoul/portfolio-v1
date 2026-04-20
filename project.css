@@ -1,0 +1,144 @@
+/* --- Palette de couleurs --- */
+:root {
+  --bg-page: #E2E1FC;      /* Lavande très clair (Fond) */
+  --card-bg: #D6BEFA;      /* Glycine (Cartes au repos) */
+  --text-main: #3A2D52;    /* Violet-Noir (Texte ultra lisible) */
+  --accent-primary: #A76EEE; /* Violet vibrant (Titres et hover) */
+  --accent-copper: #CB894F;  /* Cuivre (Détails et nom) */
+  --white-soft: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Base --- */
+body {
+  margin: 0%;
+  padding: 0%;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: "Raleway", sans-serif; /* Utilisation de ta police choisie */
+  line-height: 1.6;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  transition: 0.3s;
+}
+
+/* --- Header --- */
+.header_main {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: rgba(226, 225, 252, 0.8); /* Effet de transparence léger */
+  border-bottom: 1px solid var(--white-soft);
+}
+
+.header_main_logo img {
+  height: 80px;
+  align-self: center;
+}
+
+.header_main_nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header_main_nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.header_main_nav ul li a {
+  display: inline-block; /* Indispensable pour que le scale fonctionne */
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.header_main_nav ul li a:hover {
+  color: var(--accent-primary);
+  transform: scale(1.1); /* Grossissement de 10% seulement */
+}
+
+/* --- Introduction --- */
+.project_intro {
+  text-align: center;
+  padding: 40px 10%;
+}
+
+.project_intro h1 {
+  color: var(--accent-copper);
+  font-size: 2.5rem;
+}
+
+.project_intro p {
+  font-family: "Lora", serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- Grille des Projets --- */
+.project_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 5%;
+}
+
+/* --- Cartes --- */
+.project_card {
+  background-color: var(--card-bg);
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px;
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid var(--white-soft);
+  box-shadow: 0 10px 30px rgba(58, 45, 82, 0.05);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project_card:hover {
+  transform: translateY(-10px);
+  background-color: #EBE0FF;
+  border-color: var(--accent-primary);
+}
+
+.project_card h2 {
+  color: var(--accent-primary);
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+/* --- Style de la liste interne --- */
+.project_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.project_list li {
+  font-family: "Lora", serif;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.project_list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent-copper);
+  font-weight: bold;
+}
