@@ -1,196 +1,136 @@
-/* 1. IMPORT DES POLICES */
+/* 1. IMPORT ET VARIABLES (Identiques à Formation) */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* --- Palette de couleurs --- */
 :root {
-  --bg-page: #E2E1FC;      /* Lavande très clair (Fond) */
-  --card-bg: #D6BEFA;      /* Glycine (Cartes au repos) */
-  --text-main: #3A2D52;    /* Violet-Noir (Texte ultra lisible) */
-  --accent-primary: #A76EEE; /* Violet vibrant (Titres et hover) */
-  --accent-copper: #CB894F;  /* Cuivre (Détails et nom) */
+  --bg-page: #E2E1FC;
+  --card-bg: #D6BEFA;
+  --text-main: #3A2D52;
+  --accent-primary: #A76EEE;
+  --accent-copper: #CB894F;
   --white-soft: rgba(255, 255, 255, 0.4);
 }
 
-/* --- Base --- */
+/* 2. BASE & HEADER (Inchangés pour la cohérence) */
 body {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   background-color: var(--bg-page);
   color: var(--text-main);
-  font-family: "Raleway", sans-serif; /* Utilisation de ta police choisie */
+  font-family: "Raleway", sans-serif;
   line-height: 1.6;
 }
 
-a {
-  cursor: pointer;
-  color: inherit;
-  transition: 0.3s;
-}
+/* --- Titres (Style Formation) --- */
+.global_title { padding: 40px 5%; text-align: center; }
+.global_title h1 { font-size: 2.5rem; margin: 0; color: var(--accent-copper); }
 
-/* --- Header --- */
-.header_main {
-  height: 80px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  background-color: rgba(226, 225, 252, 0.8); /* Effet de transparence léger */
-  border-bottom: 1px solid var(--white-soft);
-}
-
-.header_main_logo img {
-  height: 80px;
-  align-self: center;
-}
-
-.header_main_nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.header_main_nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.header_main_nav ul li a {
-  display: inline-block; /* Indispensable pour que le scale fonctionne */
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
-  color: var(--text-main);
-  text-decoration: none;
-}
-
-.header_main_nav ul li a:hover {
-  color: var(--accent-primary);
-  transform: scale(1.1); /* Grossissement de 10% seulement */
-}
-
-/* 3. BASE */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-lavande);
-    font-family: 'Raleway', sans-serif;
-    color: var(--text-sombre);
-}
-
-/* Introduction */
-p {
+p.intro_text {
     font-family: 'Lora', serif;
     font-size: 1.15rem;
     text-align: center;
-    max-width: 900px;
-    margin: 50px auto;
-    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
     padding: 0 20px;
 }
 
-/* 5. LAYOUT DE LA SECTION CONTACT */
+/* 3. LAYOUT (Utilisation du Flex comme dans Formation) */
 .contact_intel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
     gap: 40px;
-    padding: 20px 10% 60px 10%;
-    align-items: start;
+    padding: 20px 8% 60px 8%;
+    perspective: 1000px;
 }
 
-/* 6. LE FORMULAIRE (Effet Verre Lavande) */
+/* 4. LE FORMULAIRE (Style "Description" de Formation) */
 .contact_intel_form {
-    background: rgba(255, 255, 255, 0.3); /* Transparence légère */
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    flex: 1;
+    background: var(--card-bg); /* Couleur Glycine comme Formation */
     padding: 40px;
-    border-radius: 25px;
+    border-radius: 24px;
+    border: 1px solid var(--white-soft);
+    box-shadow: 0 10px 30px rgba(58, 45, 82, 0.05);
     display: flex;
     flex-direction: column;
     gap: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    animation: slideDown 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
+/* Champs de saisie */
 .contact_intel_form input, 
 .contact_intel_form textarea {
     padding: 15px;
     border: 1px solid rgba(167, 110, 238, 0.2);
     border-radius: 12px;
     font-family: 'Raleway', sans-serif;
-    font-size: 1rem;
     background: white;
     transition: 0.3s;
 }
 
-.contact_intel_form input:focus {
-    border-color: var(--accent-cuivre);
-    outline: none;
-    box-shadow: 0 0 8px rgba(203, 137, 79, 0.2);
-}
-
 .contact_intel_form button {
-    background-color: var(--accent-cuivre);
+    background-color: var(--accent-copper);
     color: white;
     border: none;
-    padding: 18px;
-    border-radius: 12px;
-    font-weight: 800;
+    padding: 15px;
+    border-radius: 50px; /* Arrondi comme le bouton toggle */
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s;
     text-transform: uppercase;
 }
 
 .contact_intel_form button:hover {
-    background-color: var(--accent-violet);
-    letter-spacing: 1px;
+    background-color: var(--accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(167, 110, 238, 0.3);
 }
 
-/* 7. LES CARTES LOGOS (Remplacement des blocs blancs par du translucide) */
-/* 7. LES CARTES LOGOS */
+/* 5. LES CARTES RÉSEAUX (Style "Keypoint" de Formation) */
 .contact_intel_logo {
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    animation: slideUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .contact_intel_logo a {
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.2); 
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-    height: 140px; /* Taille de la carte légèrement réduite */
+    background: white; /* Fond blanc comme les skill_cards */
+    border-radius: 24px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    overflow: hidden; /* Empêche tout débordement visuel */
+    border-top: 5px solid var(--accent-primary); /* Rappel des skill_cards */
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .contact_intel_logo a:hover {
-    transform: translateY(-10px) scale(1.03);
-    background: rgba(255, 255, 255, 0.5); 
-    border-color: var(--accent-cuivre);
+    transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(58, 45, 82, 0.1);
 }
 
-/* On cible les DIV qui contiennent les images */
-.contact_intel_logo_github, 
-.contact_intel_logo_linkedin, 
-.contact_intel_logo_tryhackme, 
-.contact_intel_logo_rootmepro {
-    height: 60px; /* Taille réduite des conteneurs d'icônes */
-    width: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.contact_intel_logo img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
 }
 
-/* LA LIGNE MAGIQUE : On force l'image à ne jamais dépasser de la div */
-.contact_intel_logo img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Garde les proportions sans déformer */
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+/* 6. ANIMATIONS (Reprise exacte de Formation) */
+@keyframes slideDown {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact_intel {
+        flex-direction: column;
+    }
 }
