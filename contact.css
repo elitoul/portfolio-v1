@@ -1,4 +1,3 @@
-/* 1. IMPORT ET VARIABLES (Identiques à Formation) */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -10,7 +9,6 @@
   --white-soft: rgba(255, 255, 255, 0.4);
 }
 
-/* 2. BASE & HEADER (Inchangés pour la cohérence) */
 body {
   margin: 0;
   padding: 0;
@@ -24,9 +22,9 @@ a {
   cursor: pointer;
   color: inherit;
   transition: 0.3s;
+  text-decoration: none;
 }
 
-/* --- Header --- */
 .header_main {
   height: 80px;
   width: 100%;
@@ -34,13 +32,13 @@ a {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background-color: rgba(226, 225, 252, 0.8); /* Effet de transparence léger */
+  background-color: rgba(226, 225, 252, 0.8);
   border-bottom: 1px solid var(--white-soft);
 }
 
 .header_main_logo img {
-  height: 80px;
-  align-self: center;
+  height: 60px; /* Taille ajustée pour éviter de déborder */
+  padding-left: 20px;
 }
 
 .header_main_nav {
@@ -58,124 +56,104 @@ a {
 }
 
 .header_main_nav ul li a {
-  display: inline-block; /* Indispensable pour que le scale fonctionne */
+  display: inline-block;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
   color: var(--text-main);
-  text-decoration: none;
 }
 
 .header_main_nav ul li a:hover {
   color: var(--accent-primary);
-  transform: scale(1.1); /* Grossissement de 10% seulement */
+  transform: scale(1.1);
 }
 
 p.intro_text {
-    font-family: 'Lora', serif;
-    font-size: 1.15rem;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    padding: 0 20px;
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-/* 3. LAYOUT (Utilisation du Flex comme dans Formation) */
 .contact_intel {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px 8% 60px 8%;
-    perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 8% 60px 8%;
+  perspective: 1000px;
 }
 
-/* 4. LE FORMULAIRE (Style "Description" de Formation) */
 .contact_intel_form {
-    flex: 1;
-    background: var(--card-bg); /* Couleur Glycine comme Formation */
-    padding: 40px;
-    border-radius: 24px;
-    border: 1px solid var(--white-soft);
-    box-shadow: 0 10px 30px rgba(58, 45, 82, 0.05);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    animation: slideDown 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  flex: 1;
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--white-soft);
+  box-shadow: 0 10px 30px rgba(58, 45, 82, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideDown 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-/* Champs de saisie */
 .contact_intel_form input, 
 .contact_intel_form textarea {
-    padding: 15px;
-    border: 1px solid rgba(167, 110, 238, 0.2);
-    border-radius: 12px;
-    font-family: 'Raleway', sans-serif;
-    background: white;
-    transition: 0.3s;
+  padding: 15px;
+  border: 1px solid rgba(167, 110, 238, 0.2);
+  border-radius: 12px;
+  font-family: 'Raleway', sans-serif;
+  background: white;
+  transition: 0.3s;
 }
 
 .contact_intel_form button {
-    background-color: var(--accent-copper);
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 50px; /* Arrondi comme le bouton toggle */
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
-    text-transform: uppercase;
+  background-color: var(--accent-copper);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
 }
 
-.contact_intel_form button:hover {
-    background-color: var(--accent-primary);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(167, 110, 238, 0.3);
-}
-
-/* 5. LES CARTES RÉSEAUX (Style "Keypoint" de Formation) */
 .contact_intel_logo {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    animation: slideUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  animation: slideUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .contact_intel_logo a {
-    background: white; /* Fond blanc comme les skill_cards */
-    border-radius: 24px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 5px solid var(--accent-primary); /* Rappel des skill_cards */
-    transition: all 0.4s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.contact_intel_logo a:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(58, 45, 82, 0.1);
+  background: white;
+  border-radius: 24px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 5px solid var(--accent-primary);
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .contact_intel_logo img {
-    max-width: 60%;
-    max-height: 60%;
-    object-fit: contain;
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
 }
 
-/* 6. ANIMATIONS (Reprise exacte de Formation) */
 @keyframes slideDown {
-    from { transform: translateY(-100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+  from { transform: translateY(-100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes slideUp {
-    from { transform: translateY(100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-/* Responsive */
 @media (max-width: 900px) {
-    .contact_intel {
-        flex-direction: column;
-    }
+  .contact_intel { flex-direction: column; }
 }
