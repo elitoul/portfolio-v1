@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Eliaz TOULOUGOUSSOU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "bg-page": "#E2E1FC",
+              "card-bg": "#D6BEFA",
+              "text-main": "#3A2D52",
+              "accent-primary": "#A76EEE",
+              "accent-copper": "#CB894F",
+              "white-soft": "rgba(255, 255, 255, 0.4)",
+            },
+            fontFamily: {
+              raleway: ["Raleway", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Raleway", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-bg-page text-text-main leading-relaxed">
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 h-20 w-full flex justify-between items-center px-6 md:px-12 bg-bg-page/80 backdrop-blur-md border-b border-white-soft"
+    >
+      <div class="flex items-center min-w-[150px]">
+        <a href="./index.html" class="block">
+          <img
+            src="img/logo_site_web.png"
+            alt="logo"
+            class="h-16 w-auto block object-contain"
+            style="display: block !important; min-height: 40px"
+          />
+        </a>
+      </div>
+
+      <nav class="absolute left-1/2 -translate-x-1/2 hidden md:block">
+        <ul class="flex gap-8 list-none p-0 m-0">
+          <li>
+            <a
+              href="./about.html"
+              class="font-semibold transition-all duration-500 hover:text-accent-primary hover:scale-110 inline-block"
+              >À propos de moi</a
+            >
+          </li>
+          <li>
+            <a
+              href="./degree.html"
+              class="font-semibold transition-all duration-500 hover:text-accent-primary hover:scale-110 inline-block"
+              >Ma formation</a
+            >
+          </li>
+          <li>
+            <a
+              href="./project.html"
+              class="font-semibold transition-all duration-500 hover:text-accent-primary hover:scale-110 inline-block"
+              >Projets</a
+            >
+          </li>
+          <li>
+            <a
+              href="./contact.html"
+              class="font-semibold transition-all duration-500 hover:text-accent-primary hover:scale-110 inline-block"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section
+      class="relative w-full h-[600px] flex flex-col justify-start pt-10 px-6 md:px-24"
+    >
+      <div>
+        <p
+          class="text-accent-copper font-extrabold text-xl tracking-wider uppercase mb-0"
+        >
+          Eliaz TOULOUGOUSSOU
+        </p>
+        <p class="text-text-main/80 font-semibold ml-0 md:ml-24 mt-1">
+          Étudiant en BTS SIO SISR - Réseaux & cybersécurité
+        </p>
+      </div>
+
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-4/5"
+      >
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight text-text-main">
+          Je conçois et sécurise des infrastructures réseaux tout en intégrant
+          une approche créative dans mes projets techniques.
+        </h1>
+      </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="max-w-4xl mx-auto px-6 py-20 text-center">
+      <h2 class="text-3xl font-bold text-accent-primary mb-6">
+        Bienvenue sur mon portfolio
+      </h2>
+      <div class="space-y-4 text-lg">
+        <p>
+          Découvrez le résultat de mes recherches en administration réseaux et
+          cybersécurité à travers mes expérimentations sur Cisco Packet Tracer.
+        </p>
+        <p>
+          Mêlant méthodologie, curiosité et créativité, je souhaite parfaire mon
+          apprentissage en milieu professionnel pour me former auprès d'experts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="flex flex-wrap justify-center gap-8 px-6 pb-24">
+      <!-- Card Item -->
+      <div
+        class="flex-1 min-w-[280px] max-w-[350px] p-8 bg-card-bg rounded-[20px] border border-white-soft shadow-lg shadow-text-main/5 transition-all duration-400 hover:-translate-y-2 hover:bg-[#EBE0FF] hover:border-accent-primary hover:shadow-2xl hover:shadow-accent-primary/20 text-center"
+      >
+        <h3 class="text-xl font-bold text-accent-primary mb-4">
+          Administration réseau
+        </h3>
+        <p class="text-sm opacity-90">
+          Configuration et sécurisation d'infrastructures réseaux.
+        </p>
+      </div>
+
+      <!-- Card Item Alt -->
+      <div
+        class="flex-1 min-w-[280px] max-w-[350px] p-8 bg-card-bg rounded-[20px] border border-white-soft shadow-lg shadow-text-main/5 transition-all duration-400 hover:-translate-y-2 hover:bg-[#EBE0FF] hover:border-accent-primary hover:shadow-2xl hover:shadow-accent-primary/20 text-center"
+      >
+        <h3 class="text-xl font-bold text-accent-primary mb-4">
+          Cybersécurité
+        </h3>
+        <p class="text-sm opacity-90">
+          Protection des systèmes et apprentissage des bonnes pratiques.
+        </p>
+      </div>
+
+      <!-- Card Item -->
+      <div
+        class="flex-1 min-w-[280px] max-w-[350px] p-8 bg-card-bg rounded-[20px] border border-white-soft shadow-lg shadow-text-main/5 transition-all duration-400 hover:-translate-y-2 hover:bg-[#EBE0FF] hover:border-accent-primary hover:shadow-2xl hover:shadow-accent-primary/20 text-center"
+      >
+        <h3 class="text-xl font-bold text-accent-primary mb-4">Projets</h3>
+        <p class="text-sm opacity-90">
+          Travaux pratiques réalisés dans le cadre du BTS et projets personnels.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
